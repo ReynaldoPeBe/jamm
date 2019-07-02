@@ -12,7 +12,7 @@ public class IndexController {
 
     @GetMapping({ "/", "/index", "/home" })
     public String index(Model m) {
-        m.addAttribute("titulo", "Bienvenido al sistema JAMM - JC");
+        m.addAttribute("titulo", "Bienvenido estas en JAMM - JC");
         return "index";
     }
 
