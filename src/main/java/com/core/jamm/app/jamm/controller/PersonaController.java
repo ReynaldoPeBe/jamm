@@ -1,6 +1,5 @@
 package com.core.jamm.app.jamm.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import com.core.jamm.app.jamm.model.dao.IPersonaDao;
