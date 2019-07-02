@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title th:text="${titulo}"></title>
+</head>
+
+<body>
+    <h1 th:text="${titulo}"></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Ci</th>
+                <th>Celular</th>
+                <th>Email</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Dirección</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="persona : ${personas}">
+                <td th:text="${persona.nombres}"></td>
+                <td th:text="${persona.apellidoPaterno}"></td>
+                <td th:text="${persona.apellidoMaterno}"></td>
+                <td th:text="${persona.ci}"></td>
+                <td th:text="${persona.celular}"></td>
+                <td th:text="${persona.email}"></td>
+                <td th:text="${persona.fechaNacimiento}"></td>
+                <td th:text="${persona.direccion}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
