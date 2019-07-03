@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="author" content="Jesús Reynaldo Pérez Benavides" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title th:text="${titulo}"></title>
@@ -12,10 +13,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body>
+
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
         <a class="navbar-brand" th:href="@{/}">JAMM-JC</a>
@@ -25,16 +26,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" th:href="@{/inicio}">Inicio
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/listarpersonas}">Personas</a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/formulariopersona}">Nueva Persona</a>
+                    <a class="nav-link" th:href="@{/listarpersonas}">Personas</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -64,34 +62,17 @@
         </div>
     </nav>
     <!--/.Navbar -->
-    <div class="container mt-5">
-        <h1 th:text="${titulo}"></h1>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
-                    <th>Ci</th>
-                    <th>Celular</th>
-                    <th>Email</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Dirección</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="persona : ${personas}">
-                    <td th:text="${persona.nombres}"></td>
-                    <td th:text="${persona.apellidoPaterno}"></td>
-                    <td th:text="${persona.apellidoMaterno}"></td>
-                    <td th:text="${persona.ci}"></td>
-                    <td th:text="${persona.celular}"></td>
-                    <td th:text="${persona.email}"></td>
-                    <td th:text="${persona.fechaNacimiento}"></td>
-                    <td th:text="${persona.direccion}"></td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="jumbotron card card-image"
+        style="">
+        <div class="text text-center py-5 px-4">
+            <div>
+                <h2 class="card-title h1-responsive pt-3 mb-5 font-bold">
+                    <strong>Este es el sistema JAMM-JC</strong></h2>
+                <p class="mx-5 mb-5">
+                    Un sistema elaborado por:<br>Jesús Reynaldo Perez Benavides, <br>usando <br>Spring Boot 2.1.6.RELEASE, <br>spring 5, <br>Hibernate, <br>PostgreSQL, <br>JPA y <br>Thymeleaf.
+                </p>
+            </div>
+        </div>
     </div>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -104,7 +85,6 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/js/mdb.min.js"></script>
-
 </body>
 
 </html>

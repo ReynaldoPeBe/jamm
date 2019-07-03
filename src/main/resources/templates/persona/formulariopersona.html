@@ -30,10 +30,10 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/listarpersonas}">Personas</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" th:href="@{/formulariopersona}">Nueva Persona</a>
                 </li>
             </ul>
@@ -64,35 +64,43 @@
         </div>
     </nav>
     <!--/.Navbar -->
-    <div class="container mt-5">
+    <div class="container my-5">
         <h1 th:text="${titulo}"></h1>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
-                    <th>Ci</th>
-                    <th>Celular</th>
-                    <th>Email</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Dirección</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="persona : ${personas}">
-                    <td th:text="${persona.nombres}"></td>
-                    <td th:text="${persona.apellidoPaterno}"></td>
-                    <td th:text="${persona.apellidoMaterno}"></td>
-                    <td th:text="${persona.ci}"></td>
-                    <td th:text="${persona.celular}"></td>
-                    <td th:text="${persona.email}"></td>
-                    <td th:text="${persona.fechaNacimiento}"></td>
-                    <td th:text="${persona.direccion}"></td>
-                </tr>
-            </tbody>
-        </table>
+
+        <form th:action="@{/savepersona}" th:object="${persona}" method="POST">
+            <div class="md-form">
+                <input type="text" id="nombres" th:field="*{nombres}" class="form-control" />
+                <label for="nombres">Nombres</label>
+            </div>
+            <div class="md-form">
+                <input type="text" id="apellidoPaterno" th:field="*{apellidoPaterno}" class="form-control" />
+                <label for="apellidoPaterno">Apellido Paterno</label>
+            </div>
+            <div class="md-form">
+                <input type="text" id="apellidoMaterno" th:field="*{apellidoMaterno}" class="form-control" />
+                <label for="apellidoMaterno">Apellido Materno</label>
+            </div>
+            <div class="md-form">
+                <input type="text" id="ci" th:field="*{ci}" class="form-control" />
+                <label for="ci">C.I.</label>
+            </div>
+            <div class="md-form">
+                <input type="email" id="email" th:field="*{email}" class="form-control">
+                <label for="email">Email</label>
+            </div>
+            <div class="md-form">
+                <input type="number" id="celular" th:field="*{celular}" class="form-control">
+                <label for="celular">Celular</label>
+            </div>
+            <div class="md-form">
+                <input type="date" id="fechaNacimiento" th:field="*{fechaNacimiento}" class="form-control" />
+            </div>
+            <p class="text-right">
+                <input type="submit" class="btn btn-primary" value="Guardar" />
+            </p>
+        </form>
     </div>
+
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
