@@ -67,37 +67,50 @@
     <div class="container my-5">
         <h1 th:text="${titulo}"></h1>
 
-        <form th:action="@{/savepersona}" th:object="${persona}" method="POST">
+        <form th:action="@{/formulariopersona}" th:object="${persona}" method="POST">
             <div class="md-form">
-                <input type="text" id="nombres" th:field="*{nombres}" class="form-control" />
+                <input type="text" id="nombres" th:field="*{nombres}" class="form-control" th:errorclass="'form-control alert-danger'" />
                 <label for="nombres">Nombres</label>
+                <small th:if="${#fields.hasErrors('nombres')}" th:errors="*{nombres}" class="form-text text-danger"></small>
             </div>
             <div class="md-form">
-                <input type="text" id="apellidoPaterno" th:field="*{apellidoPaterno}" class="form-control" />
+                <input type="text" id="apellidoPaterno" th:field="*{apellidoPaterno}" class="form-control" th:errorclass="'form-control alter-danger'" />
                 <label for="apellidoPaterno">Apellido Paterno</label>
+                <small th:if="${#fields.hasErrors('apellidoPaterno')}" th:errors="*{apellidoPaterno}" class="form-text text-danger"></small>
             </div>
             <div class="md-form">
                 <input type="text" id="apellidoMaterno" th:field="*{apellidoMaterno}" class="form-control" />
                 <label for="apellidoMaterno">Apellido Materno</label>
             </div>
             <div class="md-form">
-                <input type="text" id="ci" th:field="*{ci}" class="form-control" />
+                <input type="text" id="ci" th:field="*{ci}" class="form-control" th:errorclass="'form-control alter-danger'" />
                 <label for="ci">C.I.</label>
+                <small th:if="${#fields.hasErrors('ci')}" th:errors="*{ci}" class="form-text text-danger"></small>
             </div>
             <div class="md-form">
-                <input type="email" id="email" th:field="*{email}" class="form-control">
+                <input type="text" id="email" th:field="*{email}" class="form-control" th:errorclass="'form-control alter-danger'" />
                 <label for="email">Email</label>
+                <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="form-text text-danger"></small>
             </div>
             <div class="md-form">
-                <input type="number" id="celular" th:field="*{celular}" class="form-control">
+                <input type="number" id="celular" th:field="*{celular}" class="form-control" th:errorclass="'form-control alter-danger'" />
                 <label for="celular">Celular</label>
+                <small th:if="${#fields.hasErrors('celular')}" th:errors="*{celular}" class="form-text text-danger"></small>
             </div>
             <div class="md-form">
-                <input type="date" id="fechaNacimiento" th:field="*{fechaNacimiento}" class="form-control" />
+                <input type="text" id="fechaNacimiento" th:field="*{fechaNacimiento}" class="form-control" th:errorclass="'form-control alter-danger'" />
+                <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                <small th:if="${#fields.hasErrors('fechaNacimiento')}" th:errors="*{fechaNacimiento}" class="form-text text-danger"></small>
+            </div>
+            <div class="md-form">
+                <input type="text" id="direccion" th:field="*{direccion}" class="form-control" th:errorclass="'form-control alter-danger'" />
+                <label for="direccion">Dirección</label>
+                <small th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}" class="form-text text-danger"></small>
             </div>
             <p class="text-right">
                 <input type="submit" class="btn btn-primary" value="Guardar" />
             </p>
+            <input type="hidden" th:field="*{id}"/>
         </form>
     </div>
 

@@ -12,4 +12,6 @@ public interface IPersonaDao {
 
     public List<Persona> findAll();
 
+	public void save(Persona persona);
+
 }

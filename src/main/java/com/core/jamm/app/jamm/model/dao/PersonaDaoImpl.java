@@ -25,5 +25,13 @@ public class PersonaDaoImpl implements IPersonaDao {
     public List<Persona> findAll() {
         return em.createQuery("from Persona").getResultList();
     }
+
+    @Override
+    @Transactional
+    public void save(Persona persona) {
+        em.persist(persona);
+    }
+
+    
     
 }
