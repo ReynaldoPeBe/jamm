@@ -32,6 +32,12 @@ public class PersonaDaoImpl implements IPersonaDao {
         em.persist(persona);
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public Persona findOne(Long id) {
+        return em.find(Persona.class, id);
+    }
+
     
     
 }
