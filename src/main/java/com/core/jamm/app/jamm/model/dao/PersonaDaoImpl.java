@@ -42,4 +42,11 @@ public class PersonaDaoImpl implements IPersonaDao {
         return em.find(Persona.class, id);
     }
 
+    @Override
+    @Transactional
+    public void delete(Long id) {
+        Persona persona=findOne(id);
+        em.remove(persona);
+    }
+
 }

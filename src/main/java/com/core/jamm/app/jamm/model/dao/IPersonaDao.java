@@ -16,4 +16,6 @@ public interface IPersonaDao {
     
     public Persona findOne(Long id);
 
+    public void delete(Long id);
+
 }
