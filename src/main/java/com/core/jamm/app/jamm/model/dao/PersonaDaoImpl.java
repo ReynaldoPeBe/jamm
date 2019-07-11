@@ -29,7 +29,11 @@ public class PersonaDaoImpl implements IPersonaDao {
     @Override
     @Transactional
     public void save(Persona persona) {
-        em.persist(persona);
+        if (persona.getId() != null && persona.getId() > 0) {
+            em.merge(persona);
+        }else{
+            em.persist(persona);
+        }
     }
 
     @Override
@@ -38,6 +42,4 @@ public class PersonaDaoImpl implements IPersonaDao {
         return em.find(Persona.class, id);
     }
 
-    
-    
 }
