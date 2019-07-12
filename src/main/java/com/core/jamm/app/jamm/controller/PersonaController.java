@@ -49,7 +49,8 @@ public class PersonaController {
     // @ModelAttribute("persona") aqui esta la variable del objeto VARIABLE
     // objetowwww
     @PostMapping(value = "/formulariopersona")
-    public String savepersona(@Valid @ModelAttribute("persona") Persona persona, BindingResult result, Model m, SessionStatus status) {
+    public String savepersona(@Valid @ModelAttribute("persona") Persona persona, BindingResult result, Model m,
+            SessionStatus status) {
         if (result.hasErrors()) {
             m.addAttribute("titulo", "Formulario Personas");
             return "/persona/formulariopersona";
@@ -71,6 +72,14 @@ public class PersonaController {
         m.addAttribute("persona", persona);
         m.addAttribute("titulo", "Editar persona");
         return "/persona/formulariopersona";
+    }
+
+    @GetMapping(value = "/deletepersona/{id}")
+    public String deletepersona(Model m, @PathVariable(value = "id") Long id) {
+        if (id > 0) {
+            personaDao.delete(id);
+        }
+        return "redirect:/listarpersonas";
     }
 
 }

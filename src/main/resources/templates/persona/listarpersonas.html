@@ -78,6 +78,7 @@
                     <th>Fecha de Nacimiento</th>
                     <th>Dirección</th>
                     <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -90,7 +91,11 @@
                     <td th:text="${persona.email}"></td>
                     <td th:text="${persona.fechaNacimiento}"></td>
                     <td th:text="${persona.direccion}"></td>
-                    <td><a class="btn btn-primary btn-xs" th:href="@{/formulariopersona/} + ${persona.id}" th:text="'editar'"></a></td>
+                    <td><a class="btn btn-primary btn-xs" th:href="@{/formulariopersona/} + ${persona.id}"
+                            th:text="'editar'"></a></td>
+                    <td><a class="btn btn-danger btn-xs" th:href="@{/deletepersona/} + ${persona.id}"
+                            th:text="'Eliminar'" 
+                            th:onclick="return confirm('Esta seguro de eliminar a [(${persona.nombres})] ?')"></a></td>
                 </tr>
             </tbody>
         </table>
