@@ -15,11 +15,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 /**
  * PersonaController
  */
 @Controller
+// sesion para capturar el id de wilcard para actualizar o eleimnar persona
+@SessionAttributes("persona")
 public class PersonaController {
 
     @Autowired
@@ -45,12 +49,13 @@ public class PersonaController {
     // @ModelAttribute("persona") aqui esta la variable del objeto VARIABLE
     // objetowwww
     @PostMapping(value = "/formulariopersona")
-    public String savepersona(@Valid @ModelAttribute("persona") Persona persona, BindingResult result, Model m) {
+    public String savepersona(@Valid @ModelAttribute("persona") Persona persona, BindingResult result, Model m, SessionStatus status) {
         if (result.hasErrors()) {
             m.addAttribute("titulo", "Formulario Personas");
             return "/persona/formulariopersona";
         }
         personaDao.save(persona);
+        status.setComplete();
         return "redirect:/listarpersonas";
     }
 
@@ -60,7 +65,7 @@ public class PersonaController {
         Persona persona = null;
         if (id > 0) {
             persona = personaDao.findOne(id);
-        }else{
+        } else {
             return "redirect:/listarpersonas";
         }
         m.addAttribute("persona", persona);
