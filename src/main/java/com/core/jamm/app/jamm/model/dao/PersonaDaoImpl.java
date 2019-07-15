@@ -20,14 +20,12 @@ public class PersonaDaoImpl implements IPersonaDao {
     private EntityManager em;
 
     @Override
-    @Transactional(readOnly = true)
     @SuppressWarnings("unchecked")
     public List<Persona> findAll() {
         return em.createQuery("from Persona").getResultList();
     }
 
     @Override
-    @Transactional
     public void save(Persona persona) {
         if (persona.getId() != null && persona.getId() > 0) {
             em.merge(persona);
@@ -37,13 +35,11 @@ public class PersonaDaoImpl implements IPersonaDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public Persona findOne(Long id) {
         return em.find(Persona.class, id);
     }
 
     @Override
-    @Transactional
     public void delete(Long id) {
         Persona persona=findOne(id);
         em.remove(persona);

@@ -5,7 +5,7 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import com.core.jamm.app.jamm.entity.Persona;
-import com.core.jamm.app.jamm.model.dao.IPersonaDao;
+import com.core.jamm.app.jamm.service.IPersonaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,12 +27,12 @@ import org.springframework.web.bind.support.SessionStatus;
 public class PersonaController {
 
     @Autowired
-    private IPersonaDao personaDao;
+    private IPersonaService personaService;
 
     @GetMapping(value = "/listarpersonas")
     public String listarpersonas(Map<String, Object> m) {
         m.put("titulo", "Listado de Personas");
-        m.put("personas", personaDao.findAll());
+        m.put("personas", personaService.findAll());
         return "/persona/listarpersonas";
     }
 
@@ -55,7 +55,7 @@ public class PersonaController {
             m.addAttribute("titulo", "Formulario Personas");
             return "/persona/formulariopersona";
         }
-        personaDao.save(persona);
+        personaService.save(persona);
         status.setComplete();
         return "redirect:/listarpersonas";
     }
@@ -65,7 +65,7 @@ public class PersonaController {
     public String editarparsona(@PathVariable(value = "id") Long id, Model m) {
         Persona persona = null;
         if (id > 0) {
-            persona = personaDao.findOne(id);
+            persona = personaService.findOne(id);
         } else {
             return "redirect:/listarpersonas";
         }
@@ -77,7 +77,7 @@ public class PersonaController {
     @GetMapping(value = "/deletepersona/{id}")
     public String deletepersona(Model m, @PathVariable(value = "id") Long id) {
         if (id > 0) {
-            personaDao.delete(id);
+            personaService.delete(id);
         }
         return "redirect:/listarpersonas";
     }
