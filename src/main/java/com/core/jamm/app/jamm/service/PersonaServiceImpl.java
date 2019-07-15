@@ -21,7 +21,7 @@ public class PersonaServiceImpl implements IPersonaService {
     @Override
     @Transactional(readOnly = true)
     public List<Persona> findAll() {
-        return personaDao.findAll();
+        return (List<Persona>) personaDao.findAll();
     }
 
     @Override
@@ -33,13 +33,13 @@ public class PersonaServiceImpl implements IPersonaService {
     @Override
     @Transactional(readOnly = true)
     public Persona findOne(Long id) {
-        return personaDao.findOne(id);
+        return personaDao.findById(id).orElse(null);
     }
 
     @Override
     @Transactional
     public void delete(Long id) {
-        personaDao.delete(id);
+        personaDao.deleteById(id);
     }
 
     

@@ -1,21 +1,15 @@
 package com.core.jamm.app.jamm.model.dao;
 
-import java.util.List;
+
 
 import com.core.jamm.app.jamm.entity.Persona;
+
+import org.springframework.data.repository.CrudRepository;
 
 /**
  * IPersonaDao
  * 
  */
-public interface IPersonaDao {
-
-    public List<Persona> findAll();
-
-    public void save(Persona persona);
-    
-    public Persona findOne(Long id);
-
-    public void delete(Long id);
+public interface IPersonaDao extends CrudRepository<Persona, Long> {
 
 }
