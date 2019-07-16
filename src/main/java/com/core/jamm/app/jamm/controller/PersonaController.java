@@ -74,7 +74,7 @@ public class PersonaController {
         return "/persona/formulariopersona";
     }
 
-    @GetMapping(value = "/deletepersona/{id}")
+    @GetMapping(value = "/  /{id}")
     public String deletepersona(Model m, @PathVariable(value = "id") Long id) {
         if (id > 0) {
             personaService.delete(id);
