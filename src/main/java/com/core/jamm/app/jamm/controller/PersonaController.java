@@ -50,15 +50,15 @@ public class PersonaController {
     // @ModelAttribute("persona") aqui esta la variable del objeto VARIABLE
     // objetowwww
     @PostMapping(value = "/formulariopersona")
-    public String savepersona(@Valid @ModelAttribute("persona") Persona persona, BindingResult result, Model m, RedirectAttributes flash,
-            SessionStatus status) {
+    public String savepersona(@Valid @ModelAttribute("persona") Persona persona, BindingResult result, Model m,
+            RedirectAttributes flash, SessionStatus status) {
         if (result.hasErrors()) {
             m.addAttribute("titulo", "Formulario Personas");
             return "/persona/formulariopersona";
         }
         personaService.save(persona);
         status.setComplete();
-        flash.addFlashAttribute("success","Registro guardado correctamente");
+        flash.addFlashAttribute("success", "Registro guardado correctamente");
         return "redirect:/listarpersonas";
     }
 
@@ -68,12 +68,12 @@ public class PersonaController {
         Persona persona = null;
         if (id > 0) {
             persona = personaService.findOne(id);
-            if(persona==null){
-                flash.addFlashAttribute("warning","La persona no existe");
+            if (persona == null) {
+                flash.addFlashAttribute("warning", "La persona no existe");
                 return "redirect:/listarpersonas";
             }
         } else {
-            flash.addFlashAttribute("error","No existe ese tipo de identificador!");
+            flash.addFlashAttribute("error", "No existe ese tipo de identificador!");
             return "redirect:/listarpersonas";
         }
         m.addAttribute("persona", persona);
@@ -85,9 +85,15 @@ public class PersonaController {
     public String deletepersona(RedirectAttributes flash, Model m, @PathVariable(value = "id") Long id) {
         if (id > 0) {
             personaService.delete(id);
-            flash.addFlashAttribute("success","Persona Eliminada correctamente");
+            flash.addFlashAttribute("success", "Persona Eliminada correctamente");
         }
         return "redirect:/listarpersonas";
+    }
+
+    @GetMapping(value = "/detallepersona/{id}")
+    public String detallepersona(Model m) {
+        m.addAttribute("titulo", "Detalle Persona");
+        return "/persona/detallepersona";
     }
 
 }
