@@ -1,45 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="desing/desing.html :: head"></head>
+
 <body>
     <header th:replace="desing/desing.html :: header"></header>
     <div class="container mt-5">
         <h1 th:text="${titulo}"></h1>
-        <a class="btn btn-info" th:href="@{/formulariopersona}">Nueva persona</a>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
-                    <th>Ci</th>
-                    <th>Celular</th>
-                    <th>Email</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Dirección</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="persona : ${personas}">
-                    <td th:text="${persona.nombres}"></td>
-                    <td th:text="${persona.apellidoPaterno}"></td>
-                    <td th:text="${persona.apellidoMaterno}"></td>
-                    <td th:text="${persona.ci}"></td>
-                    <td th:text="${persona.celular}"></td>
-                    <td th:text="${persona.email}"></td>
-                    <td th:text="${persona.fechaNacimiento}"></td>
-                    <td th:text="${persona.direccion}"></td>
-                    <td><a class="btn btn-primary btn-xs" th:href="@{/formulariopersona/} + ${persona.id}"
-                            th:text="'editar'"></a></td>
-                    <td><a class="btn btn-danger btn-xs" th:href="@{/deletepersona/} + ${persona.id}"
-                            th:text="'Eliminar'" 
-                            th:onclick="return confirm('Esta seguro de eliminar a [(${persona.nombres})] ?')"></a></td>
-                </tr>
-            </tbody>
-        </table>
+        <a class="btn btn-info" th:href="@{/formulariopersona}">
+            <i class="fas fa-user-plus fa-2x"></i>
+        </a>
+        <div class="table-responsive-sm">
+            <table class="table table-striped">
+                <thead class="black white-text">
+                    <tr>
+                        <th th:text="'#'"></th>
+                        <th th:text="'Nombre'"></th>
+                        <th th:text="'Detalle'"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="persona : ${personas}">
+                        <td th:text="${personaStat.index+1}"></td>
+                        <td th:text="${persona.nombres +' '+persona.apellidoPaterno+' '+persona.apellidoMaterno}">
+                        </td>
+                        <td>
+                            <a class="btn btn-warning btn-xs" th:href="@{/detallepersona/} + ${persona.id}">
+                                <i class="far fa-address-book fa-2x"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <footer th:replace="desing/desing.html :: footer"></footer>
 </body>
+
 </html>

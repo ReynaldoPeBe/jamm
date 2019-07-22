@@ -91,9 +91,18 @@ public class PersonaController {
     }
 
     @GetMapping(value = "/detallepersona/{id}")
-    public String detallepersona(Model m) {
+    public String detallepersona(Model m, @PathVariable(value = "id") Long id, RedirectAttributes flash) {
+
+        Persona persona = personaService.findOne(id);
+        if (persona == null) {
+            flash.addFlashAttribute("error", "No existe ese tipo de identificador!");
+            m.addAttribute("titulo", "Listado de Personas");
+            return "redirect:/listarpersonas";
+        }
         m.addAttribute("titulo", "Detalle Persona");
+        m.addAttribute("persona",persona);
         return "/persona/detallepersona";
+
     }
 
 }

@@ -7,8 +7,38 @@
     <header th:replace="desing/desing.html :: header"></header>
     <div class="container">
         <h1 th:text="${titulo}"></h1>
-    </div>
-    <footer th:replace="desing/desing.html :: footer"></footer>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 text-right">
+                <a class="btn btn-danger btn-xs" th:href="@{/deletepersona/} + ${persona.id}"
+                    th:onclick="return confirm('Esta seguro de eliminar a [(${persona.nombres})] ?')">
+                    <i class="far fa-trash-alt"></i>
+                </a>
+            </div>
+            <div class="col-4">
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12"
+                        th:utext="${'&lt;h4&gt;Nombre completo:&lt;/h4&gt; '+ persona.nombres +' '+ persona.apellidoPaterno +' '+ persona.apellidoMaterno}">
+                    </div>
+                    <div class="col-12" th:utext="${'&lt;h4&gt;Cedula de Identidad:&lt;/h4&gt; '+ persona.ci}">
+                    </div>
+                    <div class="col-12"
+                        th:utext="${'&lt;h4&gt;Email:&lt;/h4&gt; '+ persona.email +' &lt;h4&gt;Celular:&lt;/h4&gt;'+persona.celular}">
+                    </div>
+                    <div class="col-12" th:utext="${'&lt;h4&gt;Fecha Nacimiento:&lt;/h4&gt; '+persona.fechaNacimiento}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6"></div>
+            <div class="col-6 text-right">
+                <a class="btn btn-primary btn-xs" th:href="@{/formulariopersona/} + ${persona.id}">
+                    <i class="far fa-edit"></i>
+                </a>
+            </div>
+        </div>
+        <footer th:replace="desing/desing.html :: footer"></footer>
 </body>
 
 </html>
