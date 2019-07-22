@@ -1,5 +1,9 @@
 package com.core.jamm.app.jamm.controller;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -15,8 +19,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
@@ -51,11 +58,28 @@ public class PersonaController {
     // objetowwww
     @PostMapping(value = "/formulariopersona")
     public String savepersona(@Valid @ModelAttribute("persona") Persona persona, BindingResult result, Model m,
-            RedirectAttributes flash, SessionStatus status) {
+            @RequestParam("file") MultipartFile foto, RedirectAttributes flash, SessionStatus status) {
         if (result.hasErrors()) {
             m.addAttribute("titulo", "Formulario Personas");
             return "/persona/formulariopersona";
         }
+
+        if (!foto.isEmpty()) {
+
+            String rootPath = "D://Temp//uploads";
+
+            try {
+                byte[] bytes = foto.getBytes();
+                Path rutaCompleta = Paths.get(rootPath + "//" + foto.getOriginalFilename());
+                Files.write(rutaCompleta, bytes);
+                flash.addFlashAttribute("info", "El archivo se subio correctamente");
+                persona.setFoto(foto.getOriginalFilename());
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
         personaService.save(persona);
         status.setComplete();
         flash.addFlashAttribute("success", "Registro guardado correctamente");
@@ -100,7 +124,7 @@ public class PersonaController {
             return "redirect:/listarpersonas";
         }
         m.addAttribute("titulo", "Detalle Persona");
-        m.addAttribute("persona",persona);
+        m.addAttribute("persona", persona);
         return "/persona/detallepersona";
 
     }

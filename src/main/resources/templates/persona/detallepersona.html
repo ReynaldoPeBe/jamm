@@ -15,9 +15,13 @@
                     <i class="far fa-trash-alt"></i>
                 </a>
             </div>
-            <div class="col-4">
+            <div class="col-md-4 col-12">
+
+                <img  class="img-thumbnail rounded float-left" style="max-width: 25%;"
+                    th:src="@{'/uploads/' + ${persona.foto}}">
+
             </div>
-            <div class="col-8">
+            <div class="col-md-8 col-12">
                 <div class="row">
                     <div class="col-12"
                         th:utext="${'&lt;h4&gt;Nombre completo:&lt;/h4&gt; '+ persona.nombres +' '+ persona.apellidoPaterno +' '+ persona.apellidoMaterno}">

@@ -67,6 +67,9 @@ public class Persona implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaRegistro;
 
+    
+    private String foto;
+
     @PrePersist
     public void fechaRegistroPrepersist() {
         fechaRegistro = new Date();

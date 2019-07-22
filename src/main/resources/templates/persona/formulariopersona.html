@@ -7,7 +7,7 @@
     <header th:replace="desing/desing.html :: header"></header>
     <div class="container my-5">
         <h1 th:text="${titulo}"></h1>
-        <form th:action="@{/formulariopersona}" th:object="${persona}" method="POST">
+        <form th:action="@{/formulariopersona}" th:object="${persona}" method="POST" enctype="multipart/form-data">
             <div class="md-form">
                 <input type="text" id="nombres" th:field="*{nombres}" class="form-control"
                     th:errorclass="'form-control alert-danger'" />
@@ -48,6 +48,11 @@
                 <label for="direccion">Dirección</label>
                 <small th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}" class="form-text text-danger"></small>
             </div>
+            <div class="md-form">
+                <input type="file" name="file"  />
+            </div>
+
+            
             <p class="text-right">
                 <input type="submit" class="btn btn-primary" value="Guardar" />
             </p>
