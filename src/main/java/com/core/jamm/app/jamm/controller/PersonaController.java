@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -66,14 +67,16 @@ public class PersonaController {
 
         if (!foto.isEmpty()) {
 
+            //cambiando a nombre único del archivo
+            String nombreFile= UUID.randomUUID().toString()+"_"+foto.getOriginalFilename();
             String rootPath = "D://Temp//uploads";
 
             try {
                 byte[] bytes = foto.getBytes();
-                Path rutaCompleta = Paths.get(rootPath + "//" + foto.getOriginalFilename());
+                Path rutaCompleta = Paths.get(rootPath + "//" + nombreFile);
                 Files.write(rutaCompleta, bytes);
                 flash.addFlashAttribute("info", "El archivo se subio correctamente");
-                persona.setFoto(foto.getOriginalFilename());
+                persona.setFoto(nombreFile);
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
