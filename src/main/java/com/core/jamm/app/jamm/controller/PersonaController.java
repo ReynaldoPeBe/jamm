@@ -67,7 +67,7 @@ public class PersonaController {
 
         if (!foto.isEmpty()) {
 
-            //cambiando a nombre único del archivo
+            //cambiando a nombre único del archivo as
             String nombreFile= UUID.randomUUID().toString()+"_"+foto.getOriginalFilename();
             String rootPath = "D://Temp//uploads";
 
