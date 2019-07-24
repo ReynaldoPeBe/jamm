@@ -21,7 +21,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import lombok.Data;
 
 /**
- * Persona
+ * Persona 
  */
 @Entity
 @Table(name = "personas")
