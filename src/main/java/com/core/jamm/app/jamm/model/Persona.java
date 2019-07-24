@@ -1,4 +1,4 @@
-package com.core.jamm.app.jamm.entity;
+package com.core.jamm.app.jamm.model;
 
 import java.io.Serializable;
 import java.util.Date;

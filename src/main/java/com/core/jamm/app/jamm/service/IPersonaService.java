@@ -2,7 +2,7 @@ package com.core.jamm.app.jamm.service;
 
 import java.util.List;
 
-import com.core.jamm.app.jamm.entity.Persona;
+import com.core.jamm.app.jamm.model.Persona;
 
 /**
  * IPersonaService

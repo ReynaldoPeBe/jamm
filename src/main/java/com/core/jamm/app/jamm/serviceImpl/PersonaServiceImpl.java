@@ -1,9 +1,10 @@
-package com.core.jamm.app.jamm.service;
+package com.core.jamm.app.jamm.serviceImpl;
 
 import java.util.List;
 
-import com.core.jamm.app.jamm.entity.Persona;
-import com.core.jamm.app.jamm.model.dao.IPersonaDao;
+import com.core.jamm.app.jamm.model.Persona;
+import com.core.jamm.app.jamm.repository.IPersonaRepository;
+import com.core.jamm.app.jamm.service.IPersonaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class PersonaServiceImpl implements IPersonaService {
 
     @Autowired
-    private IPersonaDao personaDao;
+    private IPersonaRepository personaDao;
     
     @Override
     @Transactional(readOnly = true)
@@ -32,7 +33,7 @@ public class PersonaServiceImpl implements IPersonaService {
 
     @Override
     @Transactional(readOnly = true)
-    public Persona findOne(Long id) {
+    public Persona findOne (Long id) {
         return personaDao.findById(id).orElse(null);
     }
 
@@ -41,6 +42,5 @@ public class PersonaServiceImpl implements IPersonaService {
     public void delete(Long id) {
         personaDao.deleteById(id);
     }
-
     
 }

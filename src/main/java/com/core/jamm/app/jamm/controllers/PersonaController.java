@@ -1,4 +1,4 @@
-package com.core.jamm.app.jamm.controller;
+package com.core.jamm.app.jamm.controllers;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
-import com.core.jamm.app.jamm.entity.Persona;
+import com.core.jamm.app.jamm.model.Persona;
 import com.core.jamm.app.jamm.service.IPersonaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +67,7 @@ public class PersonaController {
 
         if (!foto.isEmpty()) {
 
-            //cambiando a nombre único del archivo as
+            //cambiando a nombre único del archivo
             String nombreFile= UUID.randomUUID().toString()+"_"+foto.getOriginalFilename();
             String rootPath = "D://Temp//uploads";
 
