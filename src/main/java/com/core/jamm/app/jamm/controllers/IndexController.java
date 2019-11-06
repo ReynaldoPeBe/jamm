@@ -21,5 +21,10 @@ public class IndexController {
         m.addAttribute("titulo", "Inicio JAMM-JC");
         return "/inicio";
     }
+    @GetMapping(value = "/indexpredios")
+    public String indexpredios (Model m){
+        m.addAttribute("titulo","Predios Monoblock");
+        return "/indexpredios";
+    }
 
 }
