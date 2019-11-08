@@ -1,13 +1,19 @@
 svg {
     height: 50vw;
 }
+
 rect {
-    fill:#d3d3d3; transition: .6s fill;
+    fill: #d3d3d3;
+    transition: .6s fill;
 }
+
 rect:hover {
-    fill:#eee;
+    fill: #eee;
 }
-title {
-    font-size: 25px;
-    color: red;
+
+#tooltip {
+    background: cornsilk;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
 }

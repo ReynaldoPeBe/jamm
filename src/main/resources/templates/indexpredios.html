@@ -7,10 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title th:text="${titulo}"></title>
     <link rel="stylesheet" th:href="@{/css/index/stylepredios.css}">
+
 </head>
 
 <body>
     <h1 th:text="${titulo}"></h1>
+    <div id="tooltip" display="none" style="position: absolute; display: none;"></div>
     <svg width="694.44" height="729.41" version="1.1" viewBox="0 0 694.44 729.41" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
         <g stroke="#000" stroke-linejoin="round">
@@ -37,10 +39,10 @@
             <rect id="rect4915" transform="matrix(.72445 .68933 -.67766 .73537 0 0)" x="605.84" y="31.883"
                 width="28.011" height="16.524" rx="3.3507" ry="5.9108" fill="#2a7fff" stroke-width="3.7955" />
             <!--TIC FCPN-->
-            <a xlink:href="http://fcpn.edu.bo">
-                <rect id="rect4917" transform="matrix(.75704 .65337 -.64821 .76147 0 0)" x="539.91" y="34.049"
-                    width="21.343" height="18.314" rx="2.9179" ry="4.9133" fill="#d40000" stroke-width="4.6275">
-                    <title>TIC FCPN</title>
+            <a xlink:href="#" onclick="prueba();">
+                <rect onmousemove="showTooltip(evt, 'TIC-FCPN');" onmouseout="hideTooltip();" id="rect4917"
+                    transform="matrix(.75704 .65337 -.64821 .76147 0 0)" x="539.91" y="34.049" width="21.343"
+                    height="18.314" rx="2.9179" ry="4.9133" fill="#d40000" stroke-width="4.6275">
                 </rect>
             </a>
 
@@ -120,6 +122,10 @@
             </text>
         </g>
     </svg>
+
+    <div id="infopredio"></div>
+
+    <script type="text/javascript" th:src="@{/js/tooltip.js}"></script>
 </body>
 
 </html>
