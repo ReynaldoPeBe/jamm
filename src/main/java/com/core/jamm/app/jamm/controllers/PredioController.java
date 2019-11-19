@@ -12,8 +12,14 @@ public class PredioController {
 
     @GetMapping(value = "/menupredios")
     public String menupredios(Model m) {
-        m.addAttribute("titulo","Menú predios");
+        m.addAttribute("titulo", "Menú predios");
         return "/predios/menupredios";
+    }
+
+    @GetMapping(value = "/pmonoblock")
+    public String pmonoblock(Model m) {
+        m.addAttribute("titulo","Predios Monoblock");
+        return "/predios/pmonoblock";
     }
 
     @GetMapping(value = "/datapredios")
