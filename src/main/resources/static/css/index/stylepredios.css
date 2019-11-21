@@ -1,15 +1,3 @@
-svg {
-    height: 50vw;
-}
-
-rect {
-    fill: #d3d3d3;
-    transition: .6s fill;
-}
-
-rect:hover {
-    fill: #eee;
-}
 
 #tooltip {
     background: cornsilk;
@@ -41,3 +29,11 @@ rect:hover {
 }
 
 /* FIN FIN animacion SVG*/
+
+/*edif informatica*/
+body {
+    background-image: url("../../images/fondoweb2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}

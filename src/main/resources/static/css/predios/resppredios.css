@@ -1,0 +1,61 @@
+   /*Author: Jesus Reynaldo Perez Benavides*/
+
+   /*
+email:
+jperezbenavides gmail com
+
+*/
+
+   @font-face {
+       font-family: 'Cocon';
+       src: url("/fonts/Cocon_Regular.otf");
+   }
+
+   /*eDIFICIO INFORMATICA*/
+
+   #infoed {
+       z-index: -1;
+       float: right;
+   }
+
+   .sizeinfo {
+       float: right;
+       width: 70%;
+       height: auto;
+   }
+
+   /* ::::::::::: RESPONSIVE :::::::::::::::::::::::*/
+
+   /* ::::::::::: RESPONSIVE :::::::::::::::::::::::*/
+
+   /* ::::::::::: RESPONSIVE :::::::::::::::::::::::*/
+
+   /* tablets g2*/
+
+   @media only screen and (min-width: 992px) and (max-width: 1200px) {}
+
+   /*Note*/
+
+   @media only screen and (min-width: 940px) and (max-width: 992px) {}
+
+   /* tablets g1*/
+
+   @media only screen and (min-width: 768px) and (max-width: 940px) {}
+
+   /*smartphones g4*/
+
+   @media only screen and (min-width: 501px) and (max-width: 767px) {}
+
+   /*smartphones g2 g3*/
+
+   @media only screen and (min-width: 1px) and (max-width: 500px) {
+       #infoed {
+           z-index: -1;
+       }
+
+       .sizeinfo {
+        float: right;
+        width: 70%;
+        height: auto;
+    }
+   }
