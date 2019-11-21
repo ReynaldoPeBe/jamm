@@ -3,7 +3,6 @@
 body {
     background-image: url("../../images/fondoweb2.jpg");
     background-repeat: no-repeat;
-  
     background-size: cover;
     background-attachment: scroll;
 }
@@ -13,10 +12,12 @@ body {
     -moz-border-radius: 200px 0px 0px 0px;
     -webkit-border-radius: 200px 0px 0px 0px;
 }
-.tamimg{
+
+.tamimg {
     width: 100px;
     height: auto;
 }
+
 
 .snip1570 {
     font-family: 'Poppins', Arial, sans-serif;

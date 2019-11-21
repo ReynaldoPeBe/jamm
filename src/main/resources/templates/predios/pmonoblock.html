@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 text-left">
-                <svg width="100%" height="100%" version="1.1" viewBox="0 0 675.19 720.27"
+                <svg id="mono" width="100%" height="100%" version="1.1" viewBox="0 0 675.19 720.27"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
                     <g transform="translate(-107.01 -5.5856)">
@@ -96,18 +96,23 @@
                                 <path
                                     d="m433.5 192.79-0.23973 2.877-79.484 11.749-11.509-15.225 0.11911-3.2362 12.469 16.303z"
                                     fill="#939dac" />
-                                <path
+                                <path id="einfo"
                                     d="m540.16 27.127 51.88 79.685-30.179 22.041 1.6954 2.3736-16.276 10.851-70.869-2.0345-34.248 23.058-32.552-49.167z"
-                                    fill="#ff5555" />
+                                    fill="#dbe2e3" />
                             </g>
                         </a>
                         <g stroke-width="0">
                             <path
                                 d="m592.04 106.81-1.0111 4.4589-25.655 17.983 1.1988 2.6375-19.901 13.427-70.253-2.8772-34.527 23.497-31.889-46.515-0.39083-5.4903 32.552 49.167 34.248-23.058 70.869 2.0345 16.276-10.851-1.6954-2.3736z"
                                 fill="#aa0000" />
-                            <path
-                                d="m284.83 287.88 257.56 245.31 4.25-2.2247 27.427 26.829 15.937-16.615-275.68-281.44z"
-                                fill="#ff8f00" />
+
+
+                            <a xlink:href="#" onclick="prueba();">
+                                <path id="eanti" onmousemove="showTooltip(evt, 'Edif. Antiguo');" onmouseout="hideTooltip();"
+                                    d="m284.83 287.88 257.56 245.31 4.25-2.2247 27.427 26.829 15.937-16.615-275.68-281.44z"
+                                    fill="#dbe2e3" />
+                            </a>
+
                             <path
                                 d="m284.83 287.88 0.33909 6.4426 256.27 242.31 5.0352-2.3977 23.542 24.785 4.057-1.2234-27.427-26.829-4.25 2.2247z"
                                 fill="#aa4400" />
@@ -143,6 +148,15 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/js/mdb.min.js"></script>
 
     <script type="text/javascript" th:src="@{/js/tooltip.js}"></script>
+    <script>
+        var s = Snap("#mono");
+        var leftPupil = s.select("#einfo");
+
+        leftPupil.animate({
+            r: 50,
+            fill: "blue"
+        }, 1000);
+    </script>
 </body>
 
 </html>

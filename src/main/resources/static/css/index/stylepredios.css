@@ -17,3 +17,27 @@ rect:hover {
     border-radius: 5px;
     padding: 5px;
 }
+
+/*animacion SVG*/
+
+#einfo {
+    animation: redeye 2s infinite alternate;
+}
+
+@keyframes redeye {
+    to {
+        fill: #ff5555;
+    }
+}
+
+
+#eanti {
+    animation: orangeeye 2s infinite alternate;
+}
+@keyframes orangeeye {
+    to {
+        fill: #ff8f00;
+    }
+}
+
+/* FIN FIN animacion SVG*/
