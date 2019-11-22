@@ -11,6 +11,23 @@ jperezbenavides gmail com
        src: url("/fonts/Cocon_Regular.otf");
    }
 
+   /*mapa monoblock*/
+
+   #mapamono {
+       width: 70%;
+       height: auto;
+   }
+
+   /*leyenda*/
+
+   .leyenda {
+       margin-top: 90px;
+       font-size: 35px;
+       margin-left: -140px;
+   }
+
+   /*FIN FINmapa monoblock*/
+
    /*eDIFICIO INFORMATICA*/
 
    #infoed {
@@ -22,6 +39,87 @@ jperezbenavides gmail com
        float: right;
        width: 70%;
        height: auto;
+   }
+
+   /*CARD*/
+
+   .card {
+       margin-left: 150px;
+       border-radius: 16px;
+       width: 360px;
+       height: 360px;
+       background: url("../../images/edfoinfoweb2.jpg");
+       position: relative;
+       overflow: hidden;
+       box-shadow: 0 5px 50px rgba(0, 0, 0, 0.85);
+   }
+
+   .card:before {
+       content: "";
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       background-color: rgba(0, 0, 0, 0.92);
+   }
+
+   .card .img {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       display: flex;
+   }
+
+   .card .img span {
+       width: 25%;
+       height: 100%;
+       background: url("../../images/edfoinfoweb2.jpg");
+       transition: 0.5s;
+   }
+
+   .card .img span:nth-child(1) {
+       background-position: 0;
+       transition-delay: 0;
+   }
+
+   .card .img span:nth-child(2) {
+       background-position: 33.33333%;
+       transition-delay: 0.1s;
+   }
+
+   .card .img span:nth-child(3) {
+       background-position: 66.66666%;
+       transition-delay: 0.2s;
+   }
+
+   .card .img span:nth-child(4) {
+       background-position: 100%;
+       transition-delay: 0.3s;
+   }
+
+   .card:hover .img>span {
+       transform: translateY(-100%);
+   }
+
+   .card:hover .content {
+       transform: translateY(0%);
+       transition: 1s;
+       transition-delay: 0.1s;
+   }
+
+   .content {
+       box-sizing: border-box;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       color: white;
+       padding: 20px 20px;
+       width: 100%;
+       height: 100%;
+       transform: translateY(100%);
    }
 
    /* ::::::::::: RESPONSIVE :::::::::::::::::::::::*/
@@ -52,10 +150,39 @@ jperezbenavides gmail com
        #infoed {
            z-index: -1;
        }
-
        .sizeinfo {
-        float: right;
-        width: 70%;
-        height: auto;
-    }
+           float: right;
+           width: 70%;
+           height: auto;
+       }
+       /*leyenda*/
+       .leyenda {
+           margin-top: 1px;
+           font-size: 25px;
+           margin-left: -80px;
+       }
+       /*card imagen*/
+       .card {
+           margin-left: 2px;
+           border-radius: 16px;
+           width: 100%;
+           height: 360px;
+           background: url("../../images/edfoinfoweb2.jpg");
+           position: relative;
+           overflow: hidden;
+           box-shadow: 0 5px 50px rgba(0, 0, 0, 0.85);
+       }
+       .content {
+           box-sizing: border-box;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           color: white;
+           padding: 10px 10px;
+           width: 100%;
+           height: 100%;
+           transform: translateY(100%);
+       }
+       /*fin card imagen*/
    }

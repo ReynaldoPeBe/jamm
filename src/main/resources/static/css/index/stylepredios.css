@@ -30,6 +30,18 @@
 
 /* FIN FIN animacion SVG*/
 
+/*animacion svg Planetario*/
+#eplane {
+    animation: plomoeeye 1s infinite alternate;
+}
+@keyframes plomoeeye {
+    to {
+        fill: #e45300;
+    }
+}
+/*FIN FIN  animacion svg Planetario*/
+
+
 /*edif informatica*/
 body {
     background-image: url("../../images/fondoweb2.jpg");

@@ -21,8 +21,8 @@
     <h1 class="text-center" th:text="${titulo}"></h1>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 text-left">
-                <svg width="100%" height="100%" version="1.1" viewBox="0 0 654.24 530.61"
+            <div class="col-9 text-left">
+                <svg id="mapamono" width="100%" height="100%" version="1.1" viewBox="0 0 654.24 530.61"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g transform="rotate(41.679 560.01 141.31)">
                         <path
@@ -152,7 +152,27 @@
 
             </div>
             <div id="tooltip" display="none" style="position: absolute; display: none;"></div>
-            <div class="col-12 col-md-6">
+            <div class="col-3">
+                <h5 class="leyenda">
+                    <svg width="10%" height="10%" version="1.1" viewBox="0 0 24.19 24.19"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(-61.232 -103.48)">
+                            <circle cx="73.327" cy="115.57" r="12.095" fill="#ff8f00" stroke-width="0" />
+                        </g>
+                    </svg>
+                    Edificio antiguo
+                </h5>
+                <h5 class="leyenda">
+                    <svg width="10%" height="10%" version="1.1" viewBox="0 0 24.19 24.19"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(-61.232 -103.48)">
+                            <circle cx="73.327" cy="115.57" r="12.095" fill="#ff5555" stroke-width="0" />
+                        </g>
+                    </svg>
+                    Edificio de Informática
+                </h5>
+            </div>
+            <div class="col-12">
                 <div class="align-top align-text-top" id="infopredio"></div>
             </div>
 
