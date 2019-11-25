@@ -22,10 +22,17 @@ public class PredioController {
         return "/predios/pmonoblock";
     }
 
-    @GetMapping(value = "/datapredios")
-    public String datapredios(Model m) {
-        System.out.println("Entrando a JAVITA");
+    @GetMapping(value = "/edifinformatica")
+    public String edifinformatica(Model m) {
         m.addAttribute("v_ajax", "Pruebas Ajax");
-        return "datapredios";
+        m.addAttribute("imagen","edfoinfoweb2.jpg");
+        m.addAttribute("ubicacion","");
+        m.addAttribute("texto_titulo","");
+        return "/predios/edifinformatica";
+    }
+    @GetMapping (value = "/edifplanetario")
+    public String edifplanetario(Model m) {
+        m.addAttribute("imagen","edfoplaneweb2.jpg");
+        return "/predios/edifinformatica";
     }
 }

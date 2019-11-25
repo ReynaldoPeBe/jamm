@@ -88,26 +88,38 @@
                                 fill="#939dac" />
 
                             <!-- edificio Informatica-->
-                            <a xlink:href="#" onclick="prueba();">
-                                <path id="einfo" onmousemove="showTooltip(evt, 'Informática');"
-                                    onmouseout="hideTooltip();"
-                                    d="m540.16 27.127 51.88 79.685-30.179 22.041 1.6954 2.3736-16.276 10.851-70.869-2.0345-34.248 23.058-32.552-49.167z"
-                                    fill="#dbe2e3" />
-                            </a>
                             <path
-                                d="m592.04 106.81-1.0111 4.4589-25.655 17.983 1.1988 2.6375-19.901 13.427-70.253-2.8772-34.527 23.497-31.889-46.515-0.39083-5.4903 32.552 49.167 34.248-23.058 70.869 2.0345 16.276-10.851-1.6954-2.3736z"
+                                d="m540.16 27.127 51.88 79.685-30.179 22.041 1.6954 2.3736-16.276 10.851-70.869-2.0345-34.248 23.058-32.552-49.167z"
                                 fill="#aa0000" />
-                            <!-- edificio antiguo-->
-                            <a xlink:href="#" onclick="prueba();">
-                                <path id="eanti" onmousemove="showTooltip(evt, 'Edif. Antiguo');"
-                                    onmouseout="hideTooltip();"
-                                    d="m284.83 287.88 257.56 245.31 4.25-2.2247 27.427 26.829 15.937-16.615-275.68-281.44z"
-                                    fill="#dbe2e3" />
-                            </a>
+                            <g class="efectomarvi">
+                                <path
+                                    d="m592.04 106.81-1.0111 4.4589-25.655 17.983 1.1988 2.6375-19.901 13.427-70.253-2.8772-34.527 23.497-31.889-46.515-0.39083-5.4903 32.552 49.167 34.248-23.058 70.869 2.0345 16.276-10.851-1.6954-2.3736z"
+                                    fill="#aa0000" />
+                                <a xlink:href="#" onclick="getinfopredio('edifinformatica');">
+                                    <path id="einfo" onmousemove="showTooltip(evt, 'Informática');"
+                                        onmouseout="hideTooltip();"
+                                        d="m540.16 27.127 51.88 79.685-30.179 22.041 1.6954 2.3736-16.276 10.851-70.869-2.0345-34.248 23.058-32.552-49.167z"
+                                        fill="#dbe2e3" />
+                                </a>
+                            </g>
 
-                            <path
-                                d="m284.83 287.88 0.33909 6.4426 256.27 242.31 5.0352-2.3977 23.542 24.785 4.057-1.2234-27.427-26.829-4.25 2.2247z"
+                            <!-- edificio antiguo-->
+                            <path 
+                                d="m284.83 287.88 257.56 245.31 4.25-2.2247 27.427 26.829 15.937-16.615-275.68-281.44z"
                                 fill="#aa4400" />
+                            <g class="efectomarvi2">
+                                <path
+                                    d="m284.83 287.88 0.33909 6.4426 256.27 242.31 5.0352-2.3977 23.542 24.785 4.057-1.2234-27.427-26.829-4.25 2.2247z"
+                                    fill="#aa4400" />
+                                <a xlink:href="#" onclick="prueba();">
+                                    <path id="eanti" onmousemove="showTooltip(evt, 'Edif. Antiguo');"
+                                        onmouseout="hideTooltip();"
+                                        d="m284.83 287.88 257.56 245.31 4.25-2.2247 27.427 26.829 15.937-16.615-275.68-281.44z"
+                                        fill="#dbe2e3" />
+                                </a>
+                            </g>
+
+
                         </g>
                         <flowRoot transform="translate(107.01,5.5856)" fill="#000000" font-family="sans-serif"
                             font-size="40px" letter-spacing="0px" word-spacing="0px" style="line-height:1.25"

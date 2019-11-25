@@ -1,7 +1,7 @@
 /*titulo de oçhiver mouse*/
 function showTooltip(evt, text) {
     let tooltip = document.getElementById("tooltip");
-    text = "<h1>" + text + "</h1>";
+    text = "<h5>" + text + "</h5>";
     tooltip.innerHTML = text;
     tooltip.style.display = "block";
     tooltip.style.left = evt.pageX + 15 + 'px';
@@ -12,7 +12,7 @@ function hideTooltip() {
     tooltip.style.display = "none";
 }
 /*ajax*/
-function prueba() {
+function getinfopredio(urledif) {
     //alert("hola js");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -20,6 +20,6 @@ function prueba() {
             document.getElementById("infopredio").innerHTML = this.responseText;
         }
     };
-    xhttp.open("GET", "/datapredios", true);
+    xhttp.open("GET", "/" + urledif, true);
     xhttp.send();
 }
