@@ -23,3 +23,15 @@ function getinfopredio(urledif) {
     xhttp.open("GET", "/" + urledif, true);
     xhttp.send();
 }
+
+
+function getinfopredioparticular(iidpredio) {
+    $.ajax({
+        type: "POST",
+        url: "/getprediobyid",
+        data: {idpredio: iidpredio},
+        success: function(response){
+            $("#infopredio").html(response)
+        }
+   })
+}
