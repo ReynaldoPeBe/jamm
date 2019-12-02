@@ -77,7 +77,6 @@ public class PersonaController {
                 flash.addFlashAttribute("info", "El archivo se subio correctamente");
                 persona.setFoto(nombreFile);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

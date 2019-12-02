@@ -12,62 +12,33 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/predios/predios.css}">
+    <link rel="stylesheet" th:href="@{/css/predios/prediosok.css}">
+    <link rel="stylesheet" th:href="@{/css/predios/buttonpredio.css}">
 
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-0 col-md-2 ml-3">
-            <img class="tamimg" th:src="@{/images/fcpnblack.png}" />
-        </div>
-        <h5 class="col-12 col-md-8 ml-3">
-            <b>
-                La Facultad de Ciencias Puras y Naturales <br>tiene predios de sus carreras en el
-                <br>Monoblock Central y Cota Cota.
-            </b>
-        </h5>
-
-    </div>
-    <h1 class="mt-1 col-12 text-center text-white orange accent-3 transparent">PREDIOS <BR> FACULTAD DE CIENCIAS PURAS Y
-        NATURALES</h1>
-    <div class="container mt-2 mb-5">
-        <div class="row text-center">
-            <div class="col-12 col-md-6 text-center">
-                <figure class="snip1570">
-                    <img class="esquinaiz" th:src="@{/images/monoweb.jpg}" alt="Monoblock" />
-                    <i class="ion-android-arrow-forward"></i>
-                    <h3>Monoblock Central</h3>
-                    <a th:href="@{/pmonoblock}"></a>
-                </figure>
-                <br>
-                <h5 class="px-3 grey lighten-5">
-                    <strong>
-                        Monoblock Central: Decanato, Vicedecanato, Kardex-FCPN, Área Desconcentrada, Matemática,
-                        Informática
-                        y Estadística.
-                    </strong>
-                </h5>
-            </div>
-            <div class="col-12 col-md-6 text-center">
-                <figure class="snip1570">
-                    <img class="esquinaiz" th:src="@{/images/cotaweb.jpg}" alt="Monoblock" />
-                    <i class="ion-android-arrow-forward"></i>
-                    <h3>Cota Cota</h3>
-                    <a href="#"></a>
-                </figure>
-                <br>
-                <h5 class="px-3 grey lighten-5">
-                    <strong>
-                        Cota Cota: Física, Biología, Ecología, Química, Edificio FCPN.
-                    </strong>
-                </h5>
+    <section class="fondopredio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mt-5">
+                    <h3 class="tituloorange mt-5">Facultad de Ciencias Puras y Naturales</h3>
+                    <h1 class="titulo">Ubicación de Predios</h1>
+                    <p>En este sistemas podrás encontrar todos los predios de la Facultad de Ciencias Puras y
+                        Naturales, tener la ubicación exacta ademas de ser guiado por googlemaps.</p>
+                    
+                    <div class="">
+                        <div class="banner_btn_iner">
+                            <a href="#cardspredios" class="btn_2">Predios Disponibles<img src="img/icon/left_1_2.svg"
+                                    alt=""></a>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="popup-youtube video_popup">
+                            <span><img src="img/icon/play.svg" alt=""></span> Muestra de interacción </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <div id="infopredio"></div>
+    </section>
 </body>
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -78,12 +49,5 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/js/mdb.min.js"></script>
-<script>
-    $(".hover").mouseleave(
-        function () {
-            $(this).removeClass("hover");
-        }
-    );
-</script>
 
 </html>
