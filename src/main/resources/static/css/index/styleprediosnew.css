@@ -15,3 +15,17 @@
 .efectomarvi:hover {
     transform: translate3d(3px,3px,0px);
 }
+
+.efectomatu {
+    transition: transform 1s;
+}
+.efectomatu:hover {
+    transform: translate3d(-3px,-4px,0px);
+}
+
+.efectoandrea {
+    transition: transform 1s;
+}
+.efectoandrea:hover {
+    transform: translate3d(3px,3px,0px);
+}
