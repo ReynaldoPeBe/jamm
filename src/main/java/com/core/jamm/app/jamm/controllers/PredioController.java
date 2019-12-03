@@ -19,8 +19,6 @@ public class PredioController {
     @Autowired
     private IPredioService predioService;
 
-
-
     @GetMapping(value = "/menupredios")
     public String menupredios(Model m) {
         m.addAttribute("titulo", "Menú predios");
@@ -31,6 +29,12 @@ public class PredioController {
     public String pmonoblock(Model m) {
         m.addAttribute("titulo", "Predios Monoblock");
         return "/predios/pmonoblock";
+    }
+
+    @GetMapping(value = "/pmonoblocknv")
+    public String pmonoblocknv (Model m) {
+        m.addAttribute("titulo", "Predios Monoblock");
+        return "/predios/pmonoblocknv";
     }
 
     @PostMapping(value = "/getprediobyid")
@@ -46,11 +50,9 @@ public class PredioController {
         System.out.println("ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ");
         m.addAttribute("predio", predio);
         /*
-        svg
-        imagen del predio
-        descripcion del predio (Edificion <br> de informatica)
-        url de la ubicación
-        */
+         * svg imagen del predio descripcion del predio (Edificion <br> de informatica)
+         * url de la ubicación
+         */
         return "/predios/getprediobyid";
     }
 

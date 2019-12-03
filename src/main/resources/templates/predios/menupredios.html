@@ -41,14 +41,14 @@
                         <div class="view overlay ">
                             <img class="card-img-top bordesimagen" th:src="@{/images/monoweb.jpg}"
                                 alt="Card image cap">
-                            <a href="#!">
+                            <a th:href="@{/pmonoblocknv}">
                                 <div class="mask rgba-white-slight"></div>
                             </a>
                         </div>
                         <div class="card-body ">
                             <h4 class="textcuerpo">Monoblock Central</h4>
                             <p class="card-text">Decanato, Vicedecanato, Matemática, Informática, Estadística, Kardex FCPN.</p>
-                            <button type="button" class="btn peach-gradient btn-lg">Ver</button>
+                            <a th:href="@{/pmonoblock}"  class="btn peach-gradient btn-lg">Ver</a>
                         </div>
                     </div>
                     <div class="card mb-6 bordesimagen">
@@ -62,7 +62,7 @@
                         <div class="card-body">
                             <h4 class="textcuerpo">Cota Cota</h4>
                             <p class="card-text">Edificio FCPN, Física, Química y Biología.</p>
-                            <button type="button" class="btn peach-gradient btn-lg">Ver</button>
+                            <a th:href="@{/pmonoblocknv}" class="btn peach-gradient btn-lg">Ver</a>
                         </div>
                     </div>
                 </div>
