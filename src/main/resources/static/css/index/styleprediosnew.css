@@ -1,12 +1,17 @@
 /*efectomarvi*/
 
+/*
+
 .efectomarvi {
     transition: transform 1s;
 }
 .efectomarvi:hover {
     transform: translate3d(42px,42px,0px);
 }
-
-
-
-
+*/
+.efectomarvi {
+    transition: transform 1s;
+}
+.efectomarvi:hover {
+    transform: translate3d(3px,3px,0px);
+}
