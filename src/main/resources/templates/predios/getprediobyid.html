@@ -1,18 +1,30 @@
-<div class="blog-card spring-fever my-5" th:style="'background:url(' + @{'/images/' + ${predio.foto}} + ') center no-repeat;);'">
-    <div class="title-content">
-        <h3 th:text="${predio.nombrePredio}"><a href="#"></a></h3>
-        <div class="intro"> <a href="#">...</a> </div>
-    </div>
-    <div class="card-info">
-        <h4 th:text="${predio.descripcion}"></h4>
-        <a target="_blank"  th:href="${predio.ubicacion}">Ubicación<i class="fa fa-map-marker" aria-hidden="true"></i></a>
-    </div>
-    <div class="utility-info">
-        <ul class="utility-list">
-            <li><span class="licon icon-dat"></span>Actualizado 05 Diciembre 2019</li>
-            <li><span class="licon icon-tag"></span><a href="#">Fotos del predio</a></li>
-        </ul>
-    </div>
-    <div class="gradient-overlay"></div>
-    <div class="color-overlay"></div>
-</div><!-- /.blog-card -->
+
+<!-- Card -->
+<div class="card card-cascade wider reverse my-5 esquinasad">
+
+        <!-- Card image -->
+        <div class="view view-cascade overlay esquinasad">
+          <img class="card-img-top subir esquinasad" th:src="@{'/images/' + ${predio.foto}}" alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+      
+          <!-- Title -->
+          <h3 class="textotitulo "><strong th:text="${predio.nombrePredio}"></strong></h3>
+          <!-- Subtitle -->
+          <h6 class="font-weight-bold indigo-text py-2"></h6>
+          <!-- Text -->
+          <h4 class="textocuerpo" th:text="${predio.descripcion}">
+          </h4>
+      
+          <a class="btn warning-color-dark text-white" target="_blank"  th:href="${predio.ubicacion}">Ubicación <i class="fa fa-map-marker" aria-hidden="true"></i></a>
+      
+        </div>
+      
+      </div>
+      <!-- Card -->
+
