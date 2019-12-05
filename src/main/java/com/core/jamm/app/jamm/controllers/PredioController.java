@@ -39,15 +39,12 @@ public class PredioController {
 
     @PostMapping(value = "/getprediobyid")
     public String getPredioById(@RequestParam("idpredio") Long idpredio, Model m) {
-        System.out.println("VARIABLE DE AJAAAAAAAAX si es 1 es INFO-----:   " + idpredio);
         Predio predio = null;
         predio = predioService.findOne(idpredio);
         if (predio == null) {
             System.out.println(" VACIO");
         }
-        System.out.println("ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ");
         System.out.println(predio.getNombrePredio());
-        System.out.println("ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ");
         m.addAttribute("predio", predio);
         /*
          * svg imagen del predio descripcion del predio (Edificion <br> de informatica)

@@ -27,12 +27,15 @@ public class Predio implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    
+    @Column(columnDefinition="TEXT")
     private String svg;
 
     private String foto;
 
     private String ubicacion;
+
+    @Column(columnDefinition = "TEXT")
+    private String descripcion;
     
     @Column(name = "nombre_predio")
     private String nombrePredio;

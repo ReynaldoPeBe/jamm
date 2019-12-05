@@ -1,32 +1,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <div class="row">
-    <h1 class="text-center col-12" th:text="${predio.nombrePredio}"> </h1>
-    <div class="col-12 col-md-5 " th:utext="${predio.svg}">
+    <h1 class="text-center col-12 my-5" th:text="${predio.nombrePredio}"> </h1>
+    <div class="col-12">
+        <p th:text="${predio.descripcion}"></p>
     </div>
-    <div class="col-12 col-md-7 mb-5">
-        <div class=" pb-5">
-            <div class="card text-center">
-                <div class="img" th:style="'background:url(../images/' + ${predio.foto} + ');'">
-                </div>
-                <div class="content fondonegruli">
-                    <h2>Edificio de</h2>
-                    <h2 th:text="${predio.nombrePredio}"></h2>
-                    <!-- <h4>El edificio de informática fue construido el 1999</h4>-->
-                    <a th:href="${predio.ubicacion}" target="_blank" class="btn orange darken-2"><i
-                            class="fas fa-map-pin"></i> Ubicación</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="col-6"><img  th:src="@{'/images/' + ${predio.foto}}"/></div>
+    <div class="col-6"><a th:href="${predio.ubicacion}">Ubicacion</a></div>
 </div>
-
-<script>
-    var s = Snap("#infoed");
-    var leftPupil2 = s.select("#eplane");
-
-    leftPupil2.animate({
-        r: 50,
-        fill: "blue"
-    }, 1000);
-</script>
 </html>

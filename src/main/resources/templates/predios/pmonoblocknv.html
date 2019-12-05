@@ -542,7 +542,7 @@
 <!--Planetario Pancho-->
 <path transform="translate(39.071 41.957)" id="path7723" d="m-73.795-6.1705 5.2014-2.735v27.465l-5.2014 4.2695z" fill="#a08"/>
 <g class="efectomarvi">
-  <a xlink:href="#" onclick="getinfopredioparticular('1');">
+  <a xlink:href="#" onclick="getinfopredioparticular('2');" class="ancla" data-ancla="infopredioancla">
   <g id="planetario"  transform="translate(39.071 41.957)">
    <path id="path7723" d="m-73.795-6.1705 5.2014-2.735v27.465l-5.2014 4.2695z" fill="#a08"/>
    <g id="g11364" transform="matrix(1 0 0 .87188 -46.049 -29.642)">
@@ -557,7 +557,7 @@
      <g id="leyendaplanetario" transform="matrix(.29478 .06128 -.071035 .3417 186.77 -314.42)">
       <rect id="rect5605-8" transform="scale(-1,1)" x="219.77" y="1024.8" width="96.544" height="32.277" ry="7.3036" fill="#80a" stroke="#4d4d4d" stroke-linejoin="round" stroke-miterlimit="4.1" stroke-width=".08461"/>
       <path id="path5607-0" d="m-232.83 1027.3h-76.766c-5.1192 0-9.2404 3.1793-9.2404 7.1285v17.273c0 3.9492 4.1212 7.1284 9.2404 7.1284h15.105c1.7255 4.2097-5.9598 7.502-9.1516 10.418 5.257-0.7852 15.401-4.0289 23.101-10.418h47.712c5.1192 0 9.2404-3.1792 9.2404-7.1284v-17.273c0-3.9492-4.1212-7.1285-9.2404-7.1285z" fill="#f6d5ff" stroke="#4d4d4d" stroke-linejoin="round" stroke-miterlimit="4.1" stroke-width=".082586"/>
-      <text id="text5615-3" x="-270.47626" y="1047.8158" fill="#000000" font-family="sans-serif" font-size="14.019px" letter-spacing="0px" stroke-width=".35049" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan id="tspan5613-6" x="-270.47626" y="1047.8158" stroke-width=".35049" text-align="center" text-anchor="middle">PLANETARIO</tspan></text>
+      <text id="text5615-3" x="-270.47626" y="1047.8158" fill="#000000" font-family="sans-serif" font-size="14.019px" letter-spacing="0px" stroke-width=".35049" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan id="tspan5613-6" x="-270.47626" y="1047.8158" stroke-width=".35049" text-align="center" text-anchor="middle">Planetario</tspan></text>
      </g>
     </g>
    </g>
@@ -568,7 +568,7 @@
 
 <!--Informatica Pancho-->
 <g class="efectomarvi">
-  <a xlink:href="#" onclick="getinfopredioparticular('1');">
+  <a xlink:href="#" onclick="getinfopredioparticular('1');" class="ancla" data-ancla="infopredioancla">
   <g id="edificioinfo" transform="translate(58.257 40.344)">
    <g>
     <path id="path12100" d="m-116.17 22.03v-26l0.86602 0.5v17h15.588v-17l0.86602-0.5v26l-3.6564-2.0292v-5h-10.008v5z" fill="#656565"/>
@@ -914,7 +914,7 @@
   </g>
   
   <g fill="#000000" font-family="sans-serif" letter-spacing="0px" word-spacing="0px">
-   <text id="text3234" transform="matrix(.9048 -.47004 .50438 .84319 0 0)" x="-76.060898" y="137.49937" font-size="6.9348px" stroke-width=".17337" style="line-height:1.25" xml:space="preserve"><tspan id="tspan3232" x="-76.060898" y="137.49937" stroke-width=".17337">Calle JJPérez</tspan></text>
+   <text id="text3234" transform="matrix(.9048 -.47004 .50438 .84319 0 0)" x="-76.060898" y="137.49937" font-size="6.9348px" stroke-width=".17337" style="line-height:1.25" xml:space="preserve"><tspan id="tspan3232" x="-76.060898" y="137.49937" stroke-width=".17337">Calle J.J. Pérez</tspan></text>
    <text id="text3234-1" transform="matrix(.88862 .46782 -.47493 .87531 0 0)" x="38.294334" y="55.148376" font-size="6.4151px" stroke-width=".16038" style="line-height:1.25" xml:space="preserve"><tspan id="tspan3232-0" x="38.294334" y="55.148376" stroke-width=".16038">Calle Federico Zuazo</tspan></text>
    <text id="text3256" transform="matrix(.83455 .46277 -.60885 .86064 0 0)" x="-64.128006" y="204.43608" font-size="6.6861px" stroke-width=".16715" style="line-height:1.25" xml:space="preserve"><tspan id="tspan3254" x="-64.128006" y="204.43608" stroke-width=".16715">Atrio UMSA</tspan></text>
   </g>
@@ -929,7 +929,7 @@
             </div>
 
 
-            <div class="col-12">
+            <div class="col-12" id="infopredioancla">
                 <div class="align-top align-text-top" id="infopredio"></div>
             </div>
 
@@ -949,15 +949,5 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/js/mdb.min.js"></script>
 
     <script type="text/javascript" th:src="@{/js/tooltip.js}"></script>
-    <script>
-        var s = Snap("#mono");
-        var leftPupil = s.select("#einfo");
-
-        leftPupil.animate({
-            r: 50,
-            fill: "blue"
-        }, 1000);
-    </script>
 </body>
-
 </html>
