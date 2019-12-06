@@ -37,6 +37,14 @@ public class PredioController {
         return "/predios/pmonoblocknv";
     }
 
+    
+    @GetMapping(value = "/pcotacotanv")
+    public String pcotacotanv (Model m) {
+        m.addAttribute("titulo", "Predios Cota Cota");
+        return "/predios/pcotacotanv";
+    }
+
+
     @PostMapping(value = "/getprediobyid")
     public String getPredioById(@RequestParam("idpredio") Long idpredio, Model m) {
         Predio predio = null;

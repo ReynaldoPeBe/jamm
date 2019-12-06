@@ -47,3 +47,21 @@ body {
 .subrayadotextorange {
     text-decoration: underline #ff8f00;
 }
+
+
+
+.efectomarvi2 {
+    transition: transform 1s;
+}
+
+.efectomarvi2:hover {
+    transform: translate3d(-1px, -4px, 0px);
+}
+
+.efectomarvi3 {
+    transition: transform 1s;
+}
+
+.efectomarvi3:hover {
+    transform: translate3d(2px, -4px, 0px);
+}
